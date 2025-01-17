@@ -1,26 +1,22 @@
-// AndroidManifest.xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.analogwatchface">
 
     <application
-        android:allowBackup="true"
-        android:label="AnalogWatchFace"
+        android:label="Analog Watch Face"
+        android:icon="@mipmap/ic_launcher"
         android:theme="@android:style/Theme.DeviceDefault">
 
         <service
             android:name=".AnalogWatchFaceService"
-            android:permission="android.permission.BIND_WALLPAPER">
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
-
                 <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
             </intent-filter>
-
             <meta-data
                 android:name="android.service.wallpaper"
                 android:resource="@xml/watch_face" />
         </service>
-
     </application>
-
 </manifest>

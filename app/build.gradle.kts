@@ -54,4 +54,7 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    implementation ("androidx.wear:wear:1.2.0")
+    implementation ("androidx.wear.watchface:watchface:1.1.0")
+    implementation ("androidx.wear.watchface:watchface-style:1.1.0")
 }
