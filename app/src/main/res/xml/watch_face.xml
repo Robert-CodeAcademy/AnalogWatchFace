@@ -1,0 +1,6 @@
+// res/xml/watch_face.xml
+<watch-face xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ambient android:requiresBurnInProtection="false" />
+    <interactive android:supportsTap="true" />
+</watch-face>
