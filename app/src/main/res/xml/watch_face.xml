@@ -3,6 +3,6 @@
     <complications>
         <default-complication
             android:type="SHORT_TEXT"
-            android:drawable="@drawable/ic_complication" />
+            android:drawable="@android:drawable/ic_dialog_info" />
     </complications>
 </watch-face>

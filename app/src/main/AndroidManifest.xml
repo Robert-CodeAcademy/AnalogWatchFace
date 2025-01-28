@@ -13,12 +13,16 @@
 
         <!-- Watch Face Service -->
         <service
-            android:name=".AnalogWatchFaceService"
+            android:name=".presentation.AnalogWatchFaceService"
             android:label="Analog Watch Face"
-            android:permission="android.permission.BIND_WALLPAPER">
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:exported="true">
             <meta-data
                 android:name="android.service.wallpaper"
                 android:resource="@xml/watch_face" />
+            <meta-data
+                android:name="com.google.android.wearable.standalone"
+                android:value="true" />
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
                 <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
