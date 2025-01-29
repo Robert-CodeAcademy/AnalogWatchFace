@@ -44,7 +44,7 @@ class AnalogWatchFaceService : CanvasWatchFaceService() {
             super.onCreate(holder)
             setWatchFaceStyle(
                 WatchFaceStyle.Builder(this@AnalogWatchFaceService)
-                    .setAcceptsTapEvents(false) // Disable tap events for simplicity
+                    .setAcceptsTapEvents(false)
                     .build()
             )
         }
@@ -53,7 +53,7 @@ class AnalogWatchFaceService : CanvasWatchFaceService() {
             // Draw background
             canvas.drawColor(Color.BLACK)
 
-            // Get current time
+            // Update time
             calendar.timeInMillis = System.currentTimeMillis()
             val hour = calendar.get(Calendar.HOUR)
             val minute = calendar.get(Calendar.MINUTE)
@@ -64,18 +64,25 @@ class AnalogWatchFaceService : CanvasWatchFaceService() {
             val minuteAngle = (minute + second / 60f) * 6f
             val secondAngle = second * 6f
 
-            // Draw clock hands
-            drawHand(canvas, bounds, hourAngle, hourPaint, 0.4f) // Hour hand
-            drawHand(canvas, bounds, minuteAngle, minutePaint, 0.6f) // Minute hand
-            drawHand(canvas, bounds, secondAngle, secondPaint, 0.8f) // Second hand
+            // Draw hands
+            drawHand(canvas, bounds, hourAngle, hourPaint, 0.4f)
+            drawHand(canvas, bounds, minuteAngle, minutePaint, 0.6f)
+            drawHand(canvas, bounds, secondAngle, secondPaint, 0.8f)
         }
 
-        private fun drawHand(canvas: Canvas, bounds: Rect, angle: Float, paint: Paint, length: Float) {
+        private fun drawHand(
+            canvas: Canvas,
+            bounds: Rect,
+            angle: Float,
+            paint: Paint,
+            length: Float
+        ) {
             val centerX = bounds.width() / 2f
             val centerY = bounds.height() / 2f
             val radians = Math.toRadians(angle.toDouble())
             canvas.drawLine(
-                centerX, centerY,
+                centerX,
+                centerY,
                 centerX + centerX * length * Math.sin(radians).toFloat(),
                 centerY - centerY * length * Math.cos(radians).toFloat(),
                 paint
@@ -84,7 +91,7 @@ class AnalogWatchFaceService : CanvasWatchFaceService() {
 
         override fun onTimeTick() {
             super.onTimeTick()
-            invalidate() // Redraw the watch face
+            invalidate()
         }
     }
 }

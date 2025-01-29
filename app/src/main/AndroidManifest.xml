@@ -5,7 +5,7 @@
     <uses-feature android:name="android.hardware.type.watch" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="Analog Watch Face"
         android:supportsRtl="true"
