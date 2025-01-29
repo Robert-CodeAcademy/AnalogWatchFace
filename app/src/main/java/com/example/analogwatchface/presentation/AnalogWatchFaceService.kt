@@ -5,8 +5,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.view.SurfaceHolder
-import androidx.wear.watchface.CanvasWatchFaceService
-import androidx.wear.watchface.WatchFaceStyle
+import androidx.wear.watchface.CanvasWatchFaceService // Correct import
+import androidx.wear.watchface.WatchFaceStyle // Correct import
 import java.util.Calendar
 
 class AnalogWatchFaceService : CanvasWatchFaceService() {
