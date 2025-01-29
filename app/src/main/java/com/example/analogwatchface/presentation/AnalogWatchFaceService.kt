@@ -5,17 +5,17 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.view.SurfaceHolder
-import androidx.wear.watchface.CanvasWatchFaceService // Correct import
-import androidx.wear.watchface.WatchFaceStyle // Correct import
+import androidx.wear.watchface.CanvasWatchFaceService
+import androidx.wear.watchface.WatchFaceStyle
 import java.util.Calendar
 
 class AnalogWatchFaceService : CanvasWatchFaceService() {
 
-    override fun onCreateEngine(): Engine {
+    override fun onCreateEngine(): CanvasWatchFaceService.Engine {
         return AnalogEngine()
     }
 
-    private inner class AnalogEngine : Engine() {
+    private inner class AnalogEngine : CanvasWatchFaceService.Engine() {
 
         private val hourPaint = Paint().apply {
             color = Color.WHITE
