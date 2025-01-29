@@ -40,6 +40,8 @@ android {
 
 dependencies {
 
+    implementation ("androidx.wear.watchface:watchface:1.2.0") // Add this dependency
+    implementation ("androidx.wear:wear:1.3.0") // Add this dependency
     implementation(libs.play.services.wearable)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)

@@ -1,8 +1,3 @@
 <watch-face xmlns:android="http://schemas.android.com/apk/res/android">
     <wallpaper android:drawable="@color/black" />
-    <complications>
-        <default-complication
-            android:type="SHORT_TEXT"
-            android:drawable="@android:drawable/ic_dialog_info" />
-    </complications>
 </watch-face>
