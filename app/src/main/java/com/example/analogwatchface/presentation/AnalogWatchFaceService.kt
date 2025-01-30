@@ -50,21 +50,17 @@ class AnalogWatchFaceService : CanvasWatchFaceService() {
         }
 
         override fun onDraw(canvas: Canvas, bounds: Rect) {
-            // Draw background
             canvas.drawColor(Color.BLACK)
-
-            // Update time
             calendar.timeInMillis = System.currentTimeMillis()
+
             val hour = calendar.get(Calendar.HOUR)
             val minute = calendar.get(Calendar.MINUTE)
             val second = calendar.get(Calendar.SECOND)
 
-            // Calculate angles
             val hourAngle = (hour + minute / 60f) * 30f
             val minuteAngle = (minute + second / 60f) * 6f
             val secondAngle = second * 6f
 
-            // Draw hands
             drawHand(canvas, bounds, hourAngle, hourPaint, 0.4f)
             drawHand(canvas, bounds, minuteAngle, minutePaint, 0.6f)
             drawHand(canvas, bounds, secondAngle, secondPaint, 0.8f)

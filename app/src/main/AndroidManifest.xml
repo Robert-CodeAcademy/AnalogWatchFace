@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
 
-        <!-- Watch Face Service -->
         <service
             android:name=".presentation.AnalogWatchFaceService"
             android:label="Analog Watch Face"
